@@ -7,12 +7,16 @@ class CreateProductController{
 
         const createProductService = new CreateProductService()
 
-        if(!req.file){
-            throw new Error("error upload file")
-        }else{
-            const { originalname, filename: banner} = req.file
+        // if(!req.file){
+        //     throw new Error("error upload file")
+        // }else{
+        //     const { originalname, filename: banner} = req.file
 
-            
+        let banner;
+        if (req.file) {
+          const { originalname, filename } = req.file;
+          banner = filename;
+        }            
             const product = await createProductService.execute({ name, price, description, banner, category_id })
 
             return res.json(product)
@@ -21,6 +25,6 @@ class CreateProductController{
 
         
     }
-}
+
 
 export { CreateProductController }
