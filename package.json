@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
-    "vercel-build":"npx prisma migrate deploy"
+    "vercel-build": "npx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -19,7 +19,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0",
+    "@prisma/client": "^4.14.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
