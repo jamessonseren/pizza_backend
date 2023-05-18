@@ -12,7 +12,7 @@ class CreateProductController{
         // }else{
         //     const { originalname, filename: banner} = req.file
 
-        let banner;
+        let banner: string;
         if (req.file) {
           const { originalname, filename } = req.file;
           banner = filename;
