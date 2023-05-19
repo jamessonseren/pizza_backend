@@ -17,6 +17,8 @@ import { CompleteOrderControler } from "./controllers/order/CompleteOrderControl
 import { NewPasswordController } from "./controllers/user/NewPasswordController";
 import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
 import { DeleteProductController } from "./controllers/product/DeleteProductController";
+import { DeleteuserController } from "./controllers/user/DeleteUserController";
+import { ListUserController } from "./controllers/user/ListUserController";
 
 import multer from "multer";
 
@@ -40,6 +42,10 @@ router.post('/new-password', new SendEmailRecoveryPassController().handle)
 router.put('/new-password', new NewPasswordController().handle)
 
 router.get('/me', isAuthenticated, new DetailUserController().handle)
+
+router.get('/users', isAuthenticated, new ListUserController().handle)
+
+router.delete('/user/delete', isAuthenticated, new DeleteuserController().handle)
 
 
 

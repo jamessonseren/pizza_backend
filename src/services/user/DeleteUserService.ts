@@ -1,0 +1,15 @@
+import prismaClient from "../../prisma";
+
+export class DeleteUserService{
+    async execute(user_id: string) {
+        
+        const user = await prismaClient.user.delete({
+            where:{
+                id: user_id
+            }
+        })
+
+        return user
+    }
+
+}
